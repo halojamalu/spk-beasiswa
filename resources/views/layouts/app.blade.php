@@ -35,7 +35,45 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
+                        <!-- Menu Master Data (hanya untuk user yang sudah login) -->
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home') }}">
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="masterDataDropdown" class="nav-link dropdown-toggle" href="#" role="button" 
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fas fa-database"></i> Master Data
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="masterDataDropdown">
+                                    <a class="dropdown-item" href="{{ route('kriteria.index') }}">
+                                        <i class="fas fa-list-check"></i> Data Kriteria
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('siswa.index') }}">
+                                        <i class="fas fa-users"></i> Data Siswa
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('penilaian.index') }}">
+                                        <i class="fas fa-clipboard-list"></i> Input Penilaian Siswa
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('fuzzy-ahp.index') }}">
+                                        <i class="fas fa-calculator"></i> Perhitungan Fuzzy-AHP
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('moora.index') }}">
+                                        <i class="fas fa-chart-line"></i> Perhitungan MOORA
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('moora.ranking') }}">
+                                        <i class="fas fa-trophy"></i> Hasil Ranking
+                                    </a>
+                                </div>
+                            </li>
+                        @endauth
+                    <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">

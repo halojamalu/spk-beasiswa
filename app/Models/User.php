@@ -45,4 +45,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Relationship dengan log perhitungan
+     */
+    public function logPerhitungan()
+    {
+        return $this->hasMany(LogPerhitungan::class, 'user_id');
+    }
+
+
 }
