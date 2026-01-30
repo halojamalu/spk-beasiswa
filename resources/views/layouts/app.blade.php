@@ -70,6 +70,9 @@
                                     <a class="dropdown-item" href="{{ route('moora.ranking') }}">
                                         <i class="fas fa-trophy"></i> Hasil Ranking
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('export.index') }}">
+                                        <i class="fas fa-download"></i> Export & Cetak Laporan
+                                    </a>                                    
                                 </div>
                             </li>
                         @endauth

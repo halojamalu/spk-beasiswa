@@ -212,11 +212,28 @@
                     <div class="card border-0 shadow-sm">
                         <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
                             <h6 class="mb-0"><i class="fas fa-trophy"></i> Top 10 Ranking Siswa</h6>
-                            @if($hasilCount > 0)
-                            <a href="{{ route('moora.ranking') }}" class="btn btn-sm btn-outline-primary">
-                                Lihat Semua <i class="fas fa-arrow-right"></i>
-                            </a>
-                            @endif
+                            <div class="btn-group">
+                                @if($hasilCount > 0)
+                                <a href="{{ route('moora.ranking') }}" class="btn btn-sm btn-outline-primary">
+                                    Lihat Semua <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <button type="button" class="btn btn-sm btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('export.ranking.pdf') }}" target="_blank">
+                                            <i class="fas fa-file-pdf text-danger"></i> Export PDF
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('export.ranking.excel') }}">
+                                            <i class="fas fa-file-excel text-success"></i> Export Excel
+                                        </a>
+                                    </li>
+                                </ul>
+                                @endif
+                            </div>
                         </div>
                         <div class="card-body">
                             @if($topRanking->isEmpty())

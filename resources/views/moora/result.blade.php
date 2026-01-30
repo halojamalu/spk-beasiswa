@@ -242,8 +242,29 @@
                     <a href="{{ route('moora.ranking') }}" class="btn btn-primary">
                         <i class="fas fa-list"></i> Lihat Daftar Ranking
                     </a>
-                    <button onclick="window.print()" class="btn btn-success">
-                        <i class="fas fa-print"></i> Cetak Hasil
+                    <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('export.ranking.pdf') }}" target="_blank">
+                                <i class="fas fa-file-pdf text-danger"></i> Ranking (PDF)
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('export.ranking.excel') }}">
+                                <i class="fas fa-file-excel text-success"></i> Ranking (Excel)
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('export.laporan.pdf') }}" target="_blank">
+                                <i class="fas fa-file-pdf text-danger"></i> Laporan Lengkap (PDF)
+                            </a>
+                        </li>
+                    </ul>
+                    <button onclick="window.print()" class="btn btn-info">
+                        <i class="fas fa-print"></i> Cetak
                     </button>
                 </div>
             </div>

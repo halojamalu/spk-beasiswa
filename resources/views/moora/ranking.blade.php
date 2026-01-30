@@ -133,11 +133,49 @@
                 </div>
 
                 <div class="card-footer">
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between align-items-center">
                         <a href="{{ route('moora.index') }}" class="btn btn-secondary">
                             <i class="fas fa-arrow-left"></i> Kembali
                         </a>
                         <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                <i class="fas fa-download"></i> Export Laporan
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <h6 class="dropdown-header">Export Ranking</h6>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('export.ranking.pdf') }}" target="_blank">
+                                        <i class="fas fa-file-pdf text-danger"></i> Ranking (PDF)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('export.ranking.excel') }}">
+                                        <i class="fas fa-file-excel text-success"></i> Ranking (Excel)
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <h6 class="dropdown-header">Export Detail</h6>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('export.detail.pdf') }}" target="_blank">
+                                        <i class="fas fa-file-pdf text-danger"></i> Detail Penilaian (PDF)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('export.detail.excel') }}">
+                                        <i class="fas fa-file-excel text-success"></i> Detail Penilaian (Excel)
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('export.laporan.pdf') }}" target="_blank">
+                                        <i class="fas fa-file-pdf text-danger"></i> Laporan Lengkap (PDF)
+                                    </a>
+                                </li>
+                            </ul>
                             <a href="{{ route('moora.calculate') }}" class="btn btn-info">
                                 <i class="fas fa-calculator"></i> Lihat Detail Perhitungan
                             </a>

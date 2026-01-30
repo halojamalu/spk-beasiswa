@@ -638,7 +638,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <p class="mb-0 text-muted;" style="color: white">
-                        &copy; {{ date('Y') }} MI Daarul Ishlah Batam. All rights reserved.
+                        &copy; {{ date('Y') }} MI Daarul Ishlah Batam | Tunasidea. All rights reserved.
                     </p>
                 </div>
             </div>

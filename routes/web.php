@@ -44,4 +44,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/ranking', [App\Http\Controllers\MooraController::class, 'ranking'])->name('ranking');
         Route::post('/reset', [App\Http\Controllers\MooraController::class, 'reset'])->name('reset');
     });
+
+    // Route untuk Export
+    Route::prefix('export')->name('export.')->group(function () {
+        Route::get('/', [App\Http\Controllers\ExportController::class, 'index'])->name('index');
+        Route::get('/ranking-pdf', [App\Http\Controllers\ExportController::class, 'rankingPdf'])->name('ranking.pdf');
+        Route::get('/ranking-excel', [App\Http\Controllers\ExportController::class, 'rankingExcel'])->name('ranking.excel');
+        Route::get('/detail-pdf', [App\Http\Controllers\ExportController::class, 'detailPdf'])->name('detail.pdf');
+        Route::get('/detail-excel', [App\Http\Controllers\ExportController::class, 'detailExcel'])->name('detail.excel');
+        Route::get('/laporan-lengkap-pdf', [App\Http\Controllers\ExportController::class, 'laporanLengkapPdf'])->name('laporan.pdf');
+    });
 });
